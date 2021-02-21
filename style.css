@@ -54,7 +54,7 @@ header {
 }
 
 .link:hover {
-  color: black;
+  color: rgb(161, 190, 208);
   transform: rotate(30deg);
 }
 
@@ -98,7 +98,7 @@ header img {
     rgb(161, 190, 208) 50%,
     transparent 100%
   );
-  bottom: 40rem;
+  top: 40rem;
 }
 .description {
   width: 100%;
@@ -108,6 +108,21 @@ header img {
   background-size: cover;
   background-position: top;
   position: relative;
+  clip-path: polygon(
+    0% 5%,
+    39% 12%,
+    50% 5%,
+    83% 0%,
+    100% 0%,
+    100% 100%,
+    83% 87%,
+    65% 92%,
+    40% 77%,
+    34% 89%,
+    16% 90%,
+    5% 100%,
+    0% 100%
+  );
 }
 
 .description p {
@@ -118,17 +133,39 @@ header img {
   font-size: 5rem;
   font-family: "Bungee Outline", cursive;
 }
+
+@media only screen and (max-width: 1182px) {
+  .description p {
+    top: 40%;
+  }
+}
+
+@media only screen and (max-width: 782px) {
+  .description p {
+    font-size: 4rem;
+  }
+}
 /* gallery */
 
 .gallery {
   width: 100%;
-  height: 85vh;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   padding: 10rem 15rem;
   color: seashell;
+}
+@media only screen and (max-width: 1320px) {
+  .gallery {
+    height: 150vh;
+  }
+}
+@media only screen and (max-width: 890px) {
+  .gallery {
+    height: 260vh;
+  }
 }
 
 .gallery::before {
@@ -151,6 +188,23 @@ header img {
   text-align: center;
 }
 
+@media only screen and (max-width: 1440px) {
+  .gallery figure {
+    margin: 1.5rem 2rem;
+  }
+}
+@media only screen and (max-width: 980px) {
+  .gallery figure {
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 890px) {
+  .gallery figure {
+    width: 80%;
+  }
+}
+
 figure img {
   width: 100%;
   height: 100%;
@@ -161,4 +215,48 @@ figure img {
 
 figcaption {
   font-size: 2rem;
+}
+
+/* Story */
+
+.story {
+  height: auto;
+  width: 100%;
+  background-color: rgb(161, 190, 208);
+  padding: 3rem 5rem;
+}
+
+iframe {
+  width: 60%;
+  height: 40rem;
+  margin: 20rem auto 10rem auto;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
+}
+
+.story p {
+  width: 60%;
+  font-size: 2rem;
+  margin: 10rem auto;
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .story p {
+    width: 80%;
+  }
+}
+
+/* footer */
+
+footer {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+}
+
+footer h3 {
+  font-size: 2rem;
+  margin-left: 4rem;
 }
